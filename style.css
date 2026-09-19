@@ -1,0 +1,314 @@
+/* ============================================
+   SAFE REPORT — hoja de estilos
+   ============================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Inter:wght@400;500;600&display=swap');
+
+:root {
+  --bg: #f4f4f1;
+  --panel: #ffffff;
+  --ink: #1c1f22;
+  --ink-soft: #55585c;
+  --border: #dcdcd6;
+
+  --amber: #e0a526;
+  --amber-dark: #b8830f;
+  --verde: #2f6b52;
+  --rojo: #b3271e;
+  --gris-na: #8a8d85;
+
+  --radius: 10px;
+  --font-title: 'Barlow Condensed', sans-serif;
+  --font-body: 'Inter', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 24px 16px 80px;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+h1 {
+  font-family: var(--font-title);
+  font-weight: 700;
+  font-size: 34px;
+  letter-spacing: 0.3px;
+  color: var(--ink);
+  margin: 0 0 20px;
+  padding-bottom: 12px;
+  border-bottom: 4px solid var(--amber);
+}
+
+form {
+  max-width: 720px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* --- Tarjetas de sección --- */
+.titulo,
+.consumos,
+.filtros,
+.verificacion {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 4px 16px;
+  overflow: hidden;
+}
+
+/* Encabezados de tabla (th) usados como título de sección */
+table th,
+.verificacion thead th:first-child {
+  font-family: var(--font-title);
+  font-weight: 600;
+  font-size: 18px;
+  letter-spacing: 0.2px;
+  text-align: left;
+  color: var(--ink);
+  padding: 14px 0 10px;
+  border-bottom: 2px solid var(--amber);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+/* --- Filas tipo lista --- */
+.titulo tr,
+.consumos tr,
+.filtros tr {
+  border-bottom: 1px solid var(--border);
+}
+
+.titulo tr:last-child,
+.consumos tr:last-child,
+.filtros tr:last-child {
+  border-bottom: none;
+}
+
+.titulo td,
+.consumos td,
+.filtros td {
+  padding: 14px 0;
+  vertical-align: middle;
+}
+
+.titulo td:first-child,
+.consumos td:first-child,
+.filtros td:first-child {
+  width: 60%;
+}
+
+label {
+  font-weight: 500;
+  color: var(--ink);
+}
+
+/* --- Inputs de texto y fecha --- */
+input[type="text"],
+input[type="date"] {
+  width: 100%;
+  padding: 10px 12px;
+  font-family: var(--font-body);
+  font-size: 15px;
+  color: var(--ink);
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+
+input[type="text"]:focus,
+input[type="date"]:focus {
+  outline: none;
+  border-color: var(--amber-dark);
+  background: var(--panel);
+}
+
+/* --- Checkboxes grandes, fáciles de tocar --- */
+input[type="checkbox"] {
+  width: 24px;
+  height: 24px;
+  accent-color: var(--amber-dark);
+  cursor: pointer;
+}
+
+.consumos td:last-child,
+.filtros td:last-child {
+  text-align: right;
+}
+
+/* ============================================
+   Sección de verificación — control segmentado
+   ============================================ */
+
+.verificacion table {
+  border-spacing: 0;
+}
+
+.verificacion thead tr {
+  display: none; /* las etiquetas Bueno/Malo/N-A se muestran dentro de cada control */
+}
+
+.verificacion tbody tr,
+.verificacion > table > tr {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.verificacion tr:last-child {
+  border-bottom: none;
+}
+
+.verificacion td:first-child {
+  flex: 1 1 100%;
+  padding: 0;
+}
+
+.verificacion td:first-child label {
+  font-size: 14.5px;
+  color: var(--ink);
+}
+
+/* Cada td con un radio individual */
+.verificacion td:not(:first-child) {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.verificacion input[type="radio"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 100%;
+  height: 40px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  cursor: pointer;
+  position: relative;
+  background: var(--bg);
+  transition: all 0.15s ease;
+}
+
+/* Etiqueta visual dentro de cada botón de radio, según su columna */
+.verificacion td:nth-child(2) input[type="radio"]::after {
+  content: "Bueno";
+}
+.verificacion td:nth-child(3) input[type="radio"]::after {
+  content: "Malo";
+}
+.verificacion td:nth-child(4) input[type="radio"]::after {
+  content: "N/A";
+}
+
+.verificacion input[type="radio"]::after {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-body);
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--ink-soft);
+}
+
+.verificacion td:nth-child(2) input[type="radio"]:checked {
+  background: var(--verde);
+  border-color: var(--verde);
+}
+.verificacion td:nth-child(3) input[type="radio"]:checked {
+  background: var(--rojo);
+  border-color: var(--rojo);
+}
+.verificacion td:nth-child(4) input[type="radio"]:checked {
+  background: var(--gris-na);
+  border-color: var(--gris-na);
+}
+
+.verificacion input[type="radio"]:checked::after {
+  color: #ffffff;
+}
+
+.verificacion input[type="radio"]:focus-visible {
+  outline: 2px solid var(--amber-dark);
+  outline-offset: 2px;
+}
+
+/* ============================================
+   Botón de enviar
+   ============================================ */
+
+.envio {
+  max-width: 720px;
+  margin: 8px auto 0;
+}
+
+.envio button,
+.envio input[type="button"] {
+  width: 100%;
+  padding: 16px;
+  font-family: var(--font-title);
+  font-size: 19px;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+  color: #1c1f22;
+  background: var(--amber);
+  border: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: background 0.15s ease, transform 0.05s ease;
+}
+
+.envio button:hover,
+.envio input[type="button"]:hover {
+  background: var(--amber-dark);
+}
+
+.envio button:active,
+.envio input[type="button"]:active {
+  transform: scale(0.99);
+}
+
+.envio button:disabled {
+  background: var(--border);
+  color: var(--ink-soft);
+  cursor: not-allowed;
+}
+
+/* ============================================
+   Responsive
+   ============================================ */
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 28px;
+  }
+
+  .titulo td:first-child,
+  .consumos td:first-child,
+  .filtros td:first-child {
+    width: 55%;
+  }
+
+  .verificacion input[type="radio"] {
+    height: 44px;
+  }
+}

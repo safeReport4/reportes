@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reporte de Equipo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <form id="reporteForm">
+        <h1>Safe Report</h1>
+        <div class="titulo">
+            <table>
+                <tr>
+                    <td><label for="fecha">Fecha</label></td>
+                    <td><input type="date" name="fecha" id="fecha"></td>
+                </tr>
+                <tr>
+                    <td><label for="equipo">Equipo</label></td>
+                    <td><input type="text" name="equipo" id="equipo"></td>
+                </tr>
+                <tr>
+                    <td><label for="obra">Obra</label></td>
+                    <td><input type="text" name="obra" id="obra"></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="consumos">
+            <table>
+                <tr>
+                    <th>Consumo lubricacion</th>
+                </tr>
+                <tr>
+                    <td><label for="consumos_aceite_moto">Aceite Moto</label></td>
+                    <td><input type="checkbox" name="consumos_aceite_moto" id="consumos_aceite_moto"></td>
+                </tr>
+                <tr>
+                    <td><label for="consumos_aceite_transmision">Aceite Transmision</label></td>
+                    <td><input type="checkbox" name="consumos_aceite_transmision" id="consumos_aceite_transmision"></td>
+                </tr>
+                <tr>
+                    <td><label for="consumos_grasa">Grasa</label></td>
+                    <td><input type="checkbox" name="consumos_grasa" id="consumos_grasa"></td>
+                </tr>
+                <tr>
+                    <td><label for="consumos_aceite_hidraulico">Aceite Hidráulico</label></td>
+                    <td><input type="checkbox" name="consumos_aceite_hidraulico" id="consumos_aceite_hidraulico"></td>
+                </tr>
+                <tr>
+                    <td><label for="consumos_conbustible">Conbustible (gl)</label></td>
+                    <td><input type="checkbox" name="consumos_conbustible" id="consumos_conbustible"></td>
+                </tr>
+                <tr>
+                    <td><label for="consumos_repuestos">Repuestos</label></td>
+                    <td><input type="text" name="consumos_repuestos" id="consumos_repuestos"></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="filtros">
+            <table>
+                <th>Consumo de filtro</th>
+                <tr>
+                    <td><label for="filtros_aceite">Filtro Aceite</label></td>
+                    <td><input type="checkbox" name="filtros_aceite" id="filtros_aceite"></td>
+                </tr>
+                <tr>
+                    <td><label for="filtros_combustible">Filtro Combustible</label></td>
+                    <td><input type="checkbox" name="filtros_combustible" id="filtros_combustible"></td>
+                </tr>
+                <tr>
+                    <td><label for="filtros_separador">Filtro Separador</label></td>
+                    <td><input type="checkbox" name="filtros_separador" id="filtros_separador"></td>
+                </tr>
+                <tr>
+                    <td><label for="filtros_aire_interno">Filtro Aire Interno</label></td>
+                    <td><input type="checkbox" name="filtros_aire_interno" id="filtros_aire_interno"></td>
+                </tr>
+                <tr>
+                    <td><label for="filtros_aire_externo">Filtro Aire Externo</label></td>
+                    <td><input type="checkbox" name="filtros_aire_externo" id="filtros_aire_externo"></td>
+                </tr>
+                <tr>
+                    <td><label for="filtros_aire_cabina">Filtro Aire Cabina</label></td>
+                    <td><input type="checkbox" name="filtros_aire_cabina" id="filtros_aire_cabina"></td>
+                </tr>
+                <tr>
+                    <td><label for="filtros_hidraulico">Filtro Hidráulico</label></td>
+                    <td><input type="checkbox" name="filtros_hidraulico" id="filtros_hidraulico"></td>
+                </tr>
+                <tr>
+                    <td><label for="otros_filtros">Otros Filtros</label></td>
+                    <td><input type="text" name="otros_filtros" id="otros_filtros"></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="verificacion">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Actividades de verificacion</th>
+                        <th>Bueno</th>
+                        <th>Malo</th>
+                        <th>N/A</th>
+                    </tr>
+                </thead>
+                <tr>
+                    <td><label for="actividad_documento_bueno">Documento al día</label></td>
+                    <td><input type="radio" name="actividad_documento" value="Bueno" id="actividad_documento_bueno"></td>
+                    <td><input type="radio" name="actividad_documento" value="Malo" id="actividad_documento_malo"></td>
+                    <td><input type="radio" name="actividad_documento" value="N/A" id="actividad_documento_na" checked></td>
+                </tr>
+                <tr>
+                    <td><label for="actividad_cinturon_bueno">Cinturón de seguridad y asiento del conductor</label></td>
+                    <td><input type="radio" name="actividad_cinturon" value="Bueno" id="actividad_cinturon_bueno"></td>
+                    <td><input type="radio" name="actividad_cinturon" value="Malo" id="actividad_cinturon_malo"></td>
+                    <td><input type="radio" name="actividad_cinturon" value="N/A" id="actividad_cinturon_na" checked></td>
+                </tr>
+                <tr>
+                    <td><label for="actividad_tablero_bueno">Estado del tablero indicadores</label></td>
+                    <td><input type="radio" name="actividad_tablero" value="Bueno" id="actividad_tablero_bueno"></td>
+                    <td><input type="radio" name="actividad_tablero" value="Malo" id="actividad_tablero_malo"></td>
+                    <td><input type="radio" name="actividad_tablero" value="N/A" id="actividad_tablero_na" checked></td>
+                </tr>
+                <tr>
+                    <td><label for="actividad_espejos_bueno">Estado de los espejos retrovisores (centrales y laterales)</label></td>
+                    <td><input type="radio" name="actividad_espejos" value="Bueno" id="actividad_espejos_bueno"></td>
+                    <td><input type="radio" name="actividad_espejos" value="Malo" id="actividad_espejos_malo"></td>
+                    <td><input type="radio" name="actividad_espejos" value="N/A" id="actividad_espejos_na" checked></td>
+                </tr>
+                <tr>
+                    <td><label for="actividad_luces_bueno">Revisar el estado de las luces</label></td>
+                    <td><input type="radio" name="actividad_luces" value="Bueno" id="actividad_luces_bueno"></td>
+                    <td><input type="radio" name="actividad_luces" value="Malo" id="actividad_luces_malo"></td>
+                    <td><input type="radio" name="actividad_luces" value="N/A" id="actividad_luces_na" checked></td>
+                </tr>
+                <tr>
+                    <td><label for="actividad_frenos_bueno">Estado de los frenos (De servicio y de emergencia)</label></td>
+                    <td><input type="radio" name="actividad_frenos" value="Bueno" id="actividad_frenos_bueno"></td>
+                    <td><input type="radio" name="actividad_frenos" value="Malo" id="actividad_frenos_malo"></td>
+                    <td><input type="radio" name="actividad_frenos" value="N/A" id="actividad_frenos_na" checked></td>
+                </tr>
+                <tr>
+                    <td><label for="actividad_alarma_bueno">Funcionamiento de la alarma de retroceso o reversa</label></td>
+                    <td><input type="radio" name="actividad_alarma" value="Bueno" id="actividad_alarma_bueno"></td>
+                    <td><input type="radio" name="actividad_alarma" value="Malo" id="actividad_alarma_malo"></td>
+                    <td><input type="radio" name="actividad_alarma" value="N/A" id="actividad_alarma_na" checked></td>
+                </tr>
+                <tr>
+                    <td><label for="actividad_bocina_bueno">Funcionamiento de la bocina o pito</label></td>
+                    <td><input type="radio" name="actividad_bocina" value="Bueno" id="actividad_bocina_bueno"></td>
+                    <td><input type="radio" name="actividad_bocina" value="Malo" id="actividad_bocina_malo"></td>
+                    <td><input type="radio" name="actividad_bocina" value="N/A" id="actividad_bocina_na" checked></td>
+                </tr>
+                <tr>
+                    <td><label for="actividad_equipo_carretera_bueno">Botiquin, extintor y equipo de carretera completo</label></td>
+                    <td><input type="radio" name="actividad_equipo_carretera" value="Bueno" id="actividad_equipo_carretera_bueno"></td>
+                    <td><input type="radio" name="actividad_equipo_carretera" value="Malo" id="actividad_equipo_carretera_malo"></td>
+                    <td><input type="radio" name="actividad_equipo_carretera" value="N/A" id="actividad_equipo_carretera_na" checked></td>
+                </tr>
+                <tr>
+                    <td><label for="actividad_llantas_bueno">Estado físico de las llantas (Sólo si aplica)</label></td>
+                    <td><input type="radio" name="actividad_llantas" value="Bueno" id="actividad_llantas_bueno"></td>
+                    <td><input type="radio" name="actividad_llantas" value="Malo" id="actividad_llantas_malo"></td>
+                    <td><input type="radio" name="actividad_llantas" value="N/A" id="actividad_llantas_na" checked></td>
+                </tr>
+                <tr>
+                    <td><label for="actividad_orugas_bueno">Estado físico de las orugas (Sólo si aplica)</label></td>
+                    <td><input type="radio" name="actividad_orugas" value="Bueno" id="actividad_orugas_bueno"></td>
+                    <td><input type="radio" name="actividad_orugas" value="Malo" id="actividad_orugas_malo"></td>
+                    <td><input type="radio" name="actividad_orugas" value="N/A" id="actividad_orugas_na" checked></td>
+                </tr>
+                <tr>
+                    <td><label for="actividad_motor_bueno">Estado del motor: Ruidos irregulares - Vibraciones</label></td>
+                    <td><input type="radio" name="actividad_motor" value="Bueno" id="actividad_motor_bueno"></td>
+                    <td><input type="radio" name="actividad_motor" value="Malo" id="actividad_motor_malo"></td>
+                    <td><input type="radio" name="actividad_motor" value="N/A" id="actividad_motor_na" checked></td>
+                </tr>
+                <tr>
+                    <td><label for="actividad_tension_bueno">Tensión de las correas - Ventilador y alternador</label></td>
+                    <td><input type="radio" name="actividad_tension" value="Bueno" id="actividad_tension_bueno"></td>
+                    <td><input type="radio" name="actividad_tension" value="Malo" id="actividad_tension_malo"></td>
+                    <td><input type="radio" name="actividad_tension" value="N/A" id="actividad_tension_na" checked></td>
+                </tr>
+                <tr>
+                    <td><label for="actividad_bateria_bueno">Chequear el estado de la batería (Cables, niveles y bornes)</label></td>
+                    <td><input type="radio" name="actividad_bateria" value="Bueno" id="actividad_bateria_bueno"></td>
+                    <td><input type="radio" name="actividad_bateria" value="Malo" id="actividad_bateria_malo"></td>
+                    <td><input type="radio" name="actividad_bateria" value="N/A" id="actividad_bateria_na" checked></td>
+                </tr>
+                <tr>
+                    <td><label for="actividad_tanques_bueno">Tanques: Refrigerante, lubricante, combustible e hidráulico</label></td>
+                    <td><input type="radio" name="actividad_tanques" value="Bueno" id="actividad_tanques_bueno"></td>
+                    <td><input type="radio" name="actividad_tanques" value="Malo" id="actividad_tanques_malo"></td>
+                    <td><input type="radio" name="actividad_tanques" value="N/A" id="actividad_tanques_na" checked></td>
+                </tr>
+                <tr>
+                    <td><label for="actividad_fugas_bueno">Control y chequeo de Fugas</label></td>
+                    <td><input type="radio" name="actividad_fugas" value="Bueno" id="actividad_fugas_bueno"></td>
+                    <td><input type="radio" name="actividad_fugas" value="Malo" id="actividad_fugas_malo"></td>
+                    <td><input type="radio" name="actividad_fugas" value="N/A" id="actividad_fugas_na" checked></td>
+                </tr>
+                <tr>
+                    <td><label for="actividad_refigerante_bueno">Nivel del liquido refrigerante o agua del radiador</label></td>
+                    <td><input type="radio" name="actividad_refigerante" value="Bueno" id="actividad_refigerante_bueno"></td>
+                    <td><input type="radio" name="actividad_refigerante" value="Malo" id="actividad_refigerante_malo"></td>
+                    <td><input type="radio" name="actividad_refigerante" value="N/A" id="actividad_refigerante_na" checked></td>
+                </tr>
+                <tr>
+                    <td><label for="actividad_bomba_hidraulica_bueno">Estado de la bomba hidrahulica</label></td>
+                    <td><input type="radio" name="actividad_bomba_hidraulica" value="Bueno" id="actividad_bomba_hidraulica_bueno"></td>
+                    <td><input type="radio" name="actividad_bomba_hidraulica" value="Malo" id="actividad_bomba_hidraulica_malo"></td>
+                    <td><input type="radio" name="actividad_bomba_hidraulica" value="N/A" id="actividad_bomba_hidraulica_na" checked></td>
+                </tr>
+                <tr>
+                    <td><label for="actividad_eje_bueno">Estado mecanico eje cardan (Solo si aplica)</label></td>
+                    <td><input type="radio" name="actividad_eje" value="Bueno" id="actividad_eje_bueno"></td>
+                    <td><input type="radio" name="actividad_eje" value="Malo" id="actividad_eje_malo"></td>
+                    <td><input type="radio" name="actividad_eje" value="N/A" id="actividad_eje_na" checked></td>
+                </tr>
+                <tr>
+                    <td><label for="actividad_carpado_bueno">Estado del carpado del equipo (Solo si aplica)</label></td>
+                    <td><input type="radio" name="actividad_carpado" value="Bueno" id="actividad_carpado_bueno"></td>
+                    <td><input type="radio" name="actividad_carpado" value="Malo" id="actividad_carpado_malo"></td>
+                    <td><input type="radio" name="actividad_carpado" value="N/A" id="actividad_carpado_na" checked></td>
+                </tr>
+                <tr>
+                    <td><label for="actividad_rodillo_bueno">Estado del rodillo (En vibrocompactadores)</label></td>
+                    <td><input type="radio" name="actividad_rodillo" value="Bueno" id="actividad_rodillo_bueno"></td>
+                    <td><input type="radio" name="actividad_rodillo" value="Malo" id="actividad_rodillo_malo"></td>
+                    <td><input type="radio" name="actividad_rodillo" value="N/A" id="actividad_rodillo_na" checked></td>
+                </tr>
+            </table>
+        </div>
+        <div class="envio">
+            <button type="submit">Enviar</button>
+        </div>
+    </form>
+
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
