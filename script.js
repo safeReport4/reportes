@@ -10,7 +10,7 @@ const form = document.getElementById('reporteForm');
 const btnEnviar = form.querySelector('button[type="submit"]');
 
 // 3. Listas de campos por tipo (deben coincidir con los id/name del HTML)
-const camposTexto = ['fecha', 'equipo', 'obra', 'horometro', 'consumos_repuestos', 'otros_filtros'];
+const camposTexto = ['fecha', 'equipo', 'obra', 'horometro_entrada', 'horometro_salida', 'consumos_repuestos', 'otros_filtros'];
 
 const camposCheckbox = [
     'consumos_aceite_moto',
