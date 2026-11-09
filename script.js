@@ -10,7 +10,7 @@ const form = document.getElementById('reporteForm');
 const btnEnviar = form.querySelector('button[type="submit"]');
 
 // 3. Listas de campos por tipo (deben coincidir con los id/name del HTML)
-const camposTexto = ['fecha', 'equipo', 'obra', 'horometro_entrada', 'horometro_salida', 'consumos_repuestos', 'otros_filtros'];
+const camposTexto = ['fecha', 'equipo', 'obra', 'horometro_entrada', 'horometro_salida', 'horas_totales', 'consumos_repuestos', 'otros_filtros'];
 
 const camposCheckbox = [
     'consumos_aceite_moto',
@@ -72,6 +72,41 @@ function armarParametros() {
 
     return params;
 }
+
+function horaTotal() {
+    const entrada = document.getElementById('horometro_entrada');
+    const salida = document.getElementById('horometro_salida');
+    const total = document.getElementById('horas_totales');
+
+    function aNumero(valor) {
+        return parseFloat(valor.replace(',', '.'));
+    }
+
+    function calcular() {
+        const a = aNumero(entrada.value);
+        const b = aNumero(salida.value);
+
+        if (isNaN(a) || isNaN(b)) {
+            total.value = '';
+            return;
+        }
+
+        const resultado = b - a;
+
+        if (resultado < 0) {
+            total.value = '';
+            return;
+        }
+
+        // Redondea a 1 decimal sin dejar ceros sobrantes: 3 -> "3", 3.2 -> "3.2"
+        total.value = Math.round(resultado * 10) / 10;
+    }
+
+    entrada.addEventListener('input', calcular);
+    salida.addEventListener('input', calcular);
+}
+
+horaTotal();
 
 // 5. Manejo del envío
 form.addEventListener('submit', function (e) {
